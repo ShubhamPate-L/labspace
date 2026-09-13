@@ -1,0 +1,227 @@
+/* ---- Page centering ---- */
+/* .auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+} */
+
+/* ---- Card ---- */
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Branding ---- */
+.auth-brand {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ---- Tabs ---- */
+.tabs {
+  display: flex;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-muted);
+}
+
+.tab-btn.active {
+  background: white;
+  color: var(--color-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Form ---- */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: var(--color-accent);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.form-group input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+}
+
+.link-muted {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.link-muted:hover {
+  text-decoration: underline;
+}
+
+/* ---- Pure CSS Tab Switching ---- */
+.tab-radio {
+  display: none;
+}
+
+.tab-panel {
+  display: none;
+}
+
+#tab-signin:checked ~ #panel-signin,
+#tab-register:checked ~ #panel-register {
+  display: block;
+}
+
+#tab-signin:checked ~ .tabs label[for="tab-signin"],
+#tab-register:checked ~ .tabs label[for="tab-register"] {
+  background: white;
+  color: var(--color-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* ---- Split Page Layout ---- */
+.split-page {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #fff9db, #ffe4e6, #dcfce7, #dbeafe);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card hover transition */
+.auth-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo {
+  width: 48px;
+  margin-bottom: 8px;
+}
+
+/* ---- Right Info Panel ---- */
+.right-panel {
+  flex: 1;
+  position: relative;
+  display: none; /* hidden on small screens */
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.campus-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 48px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.1));
+  color: white;
+}
+
+.right-overlay h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.right-overlay p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 16px;
+  max-width: 380px;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+/* Show right panel only on wider screens */
+@media (min-width: 900px) {
+  .right-panel {
+    display: flex;
+  }
+}

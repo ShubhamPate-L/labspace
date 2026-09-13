@@ -1,0 +1,46 @@
+/* ---- Reset & Base ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #0284c7;   /* BMU Blue */
+  --color-accent: #dc2650;    /* BMU Red/Crimson */
+  --color-success: #16a34a;   /* Green - available */
+  --color-danger: #dc2626;    /* Red - maintenance */
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-bg: #f1f5f9;
+  --radius: 8px;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+/* ---- Reusable Button ---- */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #b91c3c;
+}
+
+.hidden {
+  display: none;
+}
