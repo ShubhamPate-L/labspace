@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMU LabSpace | Confirm Booking</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+  <!-- Dimmed background (same header as catalog, for context) -->
+  <header class="site-header">
+    <div class="header-left">
+      <span class="header-brand">BML Munjal University™</span>
+      <span class="header-app">LabSpace</span>
+    </div>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="catalog.html" class="nav-link active">Equipment Grid</a>
+      <a href="#" class="nav-link">My Bookings</a>
+      <a href="#" class="nav-link">Lab Schedule</a>
+    </nav>
+    <div class="header-right">
+      <span class="roll-badge">Roll: 230766</span>
+      <a href="index.html" class="btn-signout">Sign Out</a>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <div class="stats-banner">
+      <div class="stat-box stat-yellow"><span class="stat-number">6</span><span class="stat-label">Total Equipment</span></div>
+      <div class="stat-box stat-green"><span class="stat-number">5</span><span class="stat-label">Available Now</span></div>
+      <div class="stat-box stat-red"><span class="stat-number">1</span><span class="stat-label">Under Maintenance</span></div>
+      <div class="stat-box stat-blue"><span class="stat-number">4</span><span class="stat-label">Lab Locations</span></div>
+    </div>
+  </main>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <div class="modal-header">
+        <h2 id="modal-title">Confirm Equipment Reservation</h2>
+        <a href="catalog.html" class="modal-close" aria-label="Close dialog">&times;</a>
+      </div>
+
+      <div class="modal-body">
+        <div class="detail-row">
+          <span class="detail-label">Equipment Name:</span>
+          <span class="detail-value">Ender 3 V2 3D Printer</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Equipment ID:</span>
+          <span class="detail-value">EQ-3D-204</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Lab Location:</span>
+          <span class="detail-value">Lab 204 &bull; MakerSpace Wing</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Selected Slot:</span>
+          <span class="detail-value highlight">10:30 AM - 12:00 PM (1.5 hrs)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Student Roll No:</span>
+          <span class="detail-value">230766 (Shubham Patel)</span>
+        </div>
+      </div>
+
+      <div class="modal-notice">
+        <strong>⚠️ Lab Safety & Usage Policy:</strong> Please arrive 5 minutes prior to your slot. Bring your physical BMU Student ID card. Handle 3D printer nozzles with care.
+      </div>
+
+      <div class="modal-actions">
+        <a href="catalog.html" class="btn-cancel">Cancel</a>
+        <a href="catalog.html" class="btn-confirm">Confirm Booking</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

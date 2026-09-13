@@ -192,6 +192,9 @@
   border-radius: var(--radius);
   font-weight: 600;
   cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
 }
 
 .btn-book:hover {
