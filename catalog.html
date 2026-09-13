@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMU LabSpace | Equipment Grid</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <span class="header-brand">BML Munjal University™</span>
+      <span class="header-app">LabSpace</span>
+    </div>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="catalog.html" class="nav-link active">Equipment Grid</a>
+      <a href="#" class="nav-link">My Bookings</a>
+      <a href="#" class="nav-link">Lab Schedule</a>
+    </nav>
+
+    <div class="header-right">
+      <span class="roll-badge">Roll: 230766</span>
+      <a href="index.html" class="btn-signout">Sign Out</a>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+
+    <div class="stats-banner">
+  <div class="stat-box stat-yellow">
+    <span class="stat-number">6</span>
+    <span class="stat-label">Total Equipment</span>
+  </div>
+  <div class="stat-box stat-green">
+    <span class="stat-number">5</span>
+    <span class="stat-label">Available Now</span>
+  </div>
+  <div class="stat-box stat-red">
+    <span class="stat-number">1</span>
+    <span class="stat-label">Under Maintenance</span>
+  </div>
+  <div class="stat-box stat-blue">
+    <span class="stat-number">4</span>
+    <span class="stat-label">Lab Locations</span>
+  </div>
+</div>
+
+    <!-- Search + Filters -->
+    <div class="toolbar">
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Search equipment by name or ID..."
+        aria-label="Search equipment">
+
+      <select class="filter-select" aria-label="Filter by category">
+        <option>All Categories</option>
+        <option>SOET Wing</option>
+        <option>MakerSpace</option>
+        <option>Robotics</option>
+        <option>IoT Lab</option>
+      </select>
+
+      <select class="filter-select" aria-label="Filter by status">
+        <option>Status: Available</option>
+        <option>Status: All</option>
+        <option>Status: Maintenance</option>
+      </select>
+    </div>
+
+    <!-- Equipment Grid -->
+    <div class="equipment-grid">
+
+      <article class="equipment-card cat-soet">
+        <div class="card-top">
+          <h3>Digital Oscilloscope 50MHz</h3>
+          <span class="status-pill available">AVAILABLE</span>
+        </div>
+        <p class="card-location">📍 Lab 102 - SOET Wing &bull; ID: EQ-OSC-102</p>
+        <div class="slot-grid">
+          <span class="slot open">09:00 - 10:30</span>
+          <span class="slot open">10:30 - 12:00</span>
+          <span class="slot booked">13:00 - 14:30</span>
+          <span class="slot open">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book">Book Equipment</button>
+      </article>
+
+      <article class="equipment-card cat-maker">
+        <div class="card-top">
+          <h3>Ender 3 V2 3D Printer</h3>
+          <span class="status-pill available">AVAILABLE</span>
+        </div>
+        <p class="card-location">📍 Lab 204 - MakerSpace &bull; ID: EQ-3D-204</p>
+        <div class="slot-grid">
+          <span class="slot open">09:00 - 10:30</span>
+          <span class="slot open">10:30 - 12:00</span>
+          <span class="slot open">13:00 - 14:30</span>
+          <span class="slot open">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book">Book Equipment</button>
+      </article>
+
+      <article class="equipment-card cat-robotics">
+        <div class="card-top">
+          <h3>Arduino Mega Starter Kit</h3>
+          <span class="status-pill maintenance">MAINTENANCE</span>
+        </div>
+        <p class="card-location">📍 Lab 105 - Robotics &bull; ID: EQ-ARD-105</p>
+        <div class="slot-grid">
+          <span class="slot booked">09:00 - 10:30</span>
+          <span class="slot booked">10:30 - 12:00</span>
+          <span class="slot booked">13:00 - 14:30</span>
+          <span class="slot booked">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book" disabled>Unavailable</button>
+      </article>
+
+      <article class="equipment-card cat-soet">
+        <div class="card-top">
+          <h3>Function Generator 10MHz</h3>
+          <span class="status-pill available">AVAILABLE</span>
+        </div>
+        <p class="card-location">📍 Lab 102 - SOET Wing &bull; ID: EQ-FGEN-102</p>
+        <div class="slot-grid">
+          <span class="slot open">09:00 - 10:30</span>
+          <span class="slot open">10:30 - 12:00</span>
+          <span class="slot open">13:00 - 14:30</span>
+          <span class="slot open">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book">Book Equipment</button>
+      </article>
+
+      <article class="equipment-card cat-iot">
+        <div class="card-top">
+          <h3>Raspberry Pi 4 Model B</h3>
+          <span class="status-pill available">AVAILABLE</span>
+        </div>
+        <p class="card-location">📍 Lab 108 - IoT Lab &bull; ID: EQ-RPI-108</p>
+        <div class="slot-grid">
+          <span class="slot open">09:00 - 10:30</span>
+          <span class="slot open">10:30 - 12:00</span>
+          <span class="slot booked">13:00 - 14:30</span>
+          <span class="slot open">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book">Book Equipment</button>
+      </article>
+
+      <article class="equipment-card cat-soet">
+        <div class="card-top">
+          <h3>Digital Soldering Station</h3>
+          <span class="status-pill available">AVAILABLE</span>
+        </div>
+        <p class="card-location">📍 Lab 201 - SOET Wing &bull; ID: EQ-SLD-201</p>
+        <div class="slot-grid">
+          <span class="slot open">09:00 - 10:30</span>
+          <span class="slot open">10:30 - 12:00</span>
+          <span class="slot open">13:00 - 14:30</span>
+          <span class="slot open">14:30 - 16:00</span>
+        </div>
+        <button class="btn-book">Book Equipment</button>
+      </article>
+
+    </div>
+  </main>
+
+</body>
+</html>

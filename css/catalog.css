@@ -1,0 +1,272 @@
+/* ---- Sticky Header ---- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+}
+
+.header-brand {
+  font-weight: 700;
+}
+
+.header-app {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.nav-link.active {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.roll-badge {
+  background: var(--color-bg);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.btn-signout {
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---- Page ---- */
+.catalog-page {
+  margin-top: 64px; /* push content below fixed header */
+  padding: 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Toolbar ---- */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.filter-select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: white;
+}
+
+/* ---- Grid ---- */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ---- Card ---- */
+.equipment-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.card-top h3 {
+  font-size: 1rem;
+}
+
+.card-location {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 14px;
+}
+
+/* ---- Status Pill ---- */
+.status-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-pill.available {
+  background: #dcfce7;
+  color: var(--color-success);
+}
+
+.status-pill.maintenance {
+  background: #fee2e2;
+  color: var(--color-danger);
+}
+
+/* ---- Time Slots ---- */
+.slot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.slot {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+.slot.open {
+  background: #f0fdf4;
+  color: var(--color-success);
+  border-color: #bbf7d0;
+}
+
+.slot.booked {
+  background: var(--color-bg);
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+/* ---- Book Button ---- */
+.btn-book {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-text);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-book:hover {
+  background: #0f172a;
+}
+
+.btn-book:disabled {
+  background: var(--color-border);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+/* ---- Stats Banner ---- */
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  color: white;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.stat-yellow { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.stat-green  { background: linear-gradient(135deg, #16a34a, #4ade80); }
+.stat-red    { background: linear-gradient(135deg, #dc2626, #f87171); }
+.stat-blue   { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+
+/* ---- Category color-coded left border ---- */
+.equipment-card {
+  border-left: 4px solid transparent;
+}
+
+.cat-soet     { border-left-color: #0284c7; }
+.cat-maker    { border-left-color: #f59e0b; }
+.cat-robotics { border-left-color: #dc2626; }
+.cat-iot      { border-left-color: #16a34a; }
+
+/* ---- Entrance Animation ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.equipment-card {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.equipment-card:nth-child(1) { animation-delay: 0.05s; }
+.equipment-card:nth-child(2) { animation-delay: 0.1s; }
+.equipment-card:nth-child(3) { animation-delay: 0.15s; }
+.equipment-card:nth-child(4) { animation-delay: 0.2s; }
+.equipment-card:nth-child(5) { animation-delay: 0.25s; }
+.equipment-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ---- Book button micro-interaction ---- */
+.btn-book:hover:not(:disabled) {
+  transform: scale(1.02);
+}
