@@ -9,89 +9,126 @@
 </head>
 <body>
 
-  <main class="split-page">
+<main class="split-page">
 
-    <!-- LEFT: Login Card -->
-    <section class="left-panel">
-      <div class="auth-card">
+  <img src="css/bml.png" alt="BML Munjal University campus" class="page-bg">
+  <div class="page-overlay"></div>
 
-        <div class="auth-brand">
-          <img src="css/logo.png" alt="BMU logo" class="brand-logo">
-          <h1 class="brand-title">BML Munjal University™</h1>
-          <p class="brand-subtitle">SOET &bull; Campus Lab Equipment Portal</p>
+  <!-- LEFT: Info Card -->
+<section class="left-panel">
+  <div class="info-card">
+  <div class="info-heading">
+    <span class="welcome-text">Welcome to</span>
+    <span class="brand-gradient-text">LabSpace</span>
+  </div>
+
+  <p class="info-desc" style="color:black; font-weight:600;">
+    A centralized platform built for BMU students to browse, reserve, and manage lab equipment across campus — no paperwork, no waiting in line.
+  </p>
+
+  <div class="info-stats">
+    <div class="stat-line">
+      <span class="stat-num">12</span>
+      <span class="stat-text">Labs across multiple programmes</span>
+    </div>
+    <div class="stat-line">
+      <span class="stat-num">150+</span>
+      <span class="stat-text">Equipment items available for reservation</span>
+    </div>
+    <div class="stat-line">
+      <span class="stat-num">500+</span>
+      <span class="stat-text">Students actively using LabSpace</span>
+    </div>
+  </div>
+
+  <div class="info-highlights">
+    <span class="highlight-label">Also Providing High End Equipmets</span>
+    <div class="highlight-tags">
+      <span class="tag">Digital Oscilloscope</span>
+      <span class="tag">Ender 3 V2 3D Printer</span>
+      <span class="tag">Raspberry Pi 4</span>
+      <span class="tag">Arduino Mega Kit</span>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!-- RIGHT: Login Card -->
+  <section class="right-panel">
+    <div class="auth-card">
+
+      <div class="auth-brand">
+        <img src="css/logo.png" alt="BMU logo" class="brand-logo">
+        <h1 class="brand-title">BML Munjal University™</h1>
+        <p class="brand-subtitle">Campus Lab Equipment Portal</p>
+      </div>
+
+      <div class="tabs-wrapper">
+        <input type="radio" name="authTab" id="tab-signin" class="tab-radio" checked>
+        <input type="radio" name="authTab" id="tab-register" class="tab-radio">
+
+        <div class="tabs" role="tablist" aria-label="Authentication options">
+          <label for="tab-signin" class="tab-btn">Sign In</label>
+          <label for="tab-register" class="tab-btn">New Registration</label>
         </div>
 
-        <div class="tabs-wrapper">
-          <input type="radio" name="authTab" id="tab-signin" class="tab-radio" checked>
-          <input type="radio" name="authTab" id="tab-register" class="tab-radio">
+        <section id="panel-signin" class="tab-panel">
+          <form action="catalog.html" method="GET">
+            <div class="form-group icon-group">
+              <span class="input-icon">👤</span>
+              <input type="text" id="roll-email" name="rollOrEmail" placeholder=" " required>
+              <label for="roll-email" class="floating-label">Student Roll Number / Email <span class="required">*</span></label>
+            </div>
+            <div class="form-group icon-group">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="password" name="password" placeholder=" " required>
+              <label for="password" class="floating-label">Password <span class="required">*</span></label>
+            </div>
+            <div class="form-row">
+              <label class="checkbox-label">
+                <input type="checkbox" id="remember" name="remember">
+                Remember me
+              </label>
+              <a href="#" class="link-muted">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span class="btn-text">Access Lab Portal</span>
+            </button>
+          </form>
+        </section>
 
-          <div class="tabs" role="tablist" aria-label="Authentication options">
-            <label for="tab-signin" class="tab-btn">Sign In</label>
-            <label for="tab-register" class="tab-btn">New Registration</label>
-          </div>
+        <section id="panel-register" class="tab-panel">
+          <form action="catalog.html" method="GET">
+            <div class="form-group icon-group">
+              <span class="input-icon">🧑</span>
+              <input type="text" id="full-name" name="fullName" placeholder=" " required>
+              <label for="full-name" class="floating-label">Full Name <span class="required">*</span></label>
+            </div>
+            <div class="form-group icon-group">
+              <span class="input-icon">🎓</span>
+              <input type="text" id="reg-roll" name="rollNumber" placeholder=" " required>
+              <label for="reg-roll" class="floating-label">Student Roll Number <span class="required">*</span></label>
+            </div>
+            <div class="form-group icon-group">
+              <span class="input-icon">✉️</span>
+              <input type="email" id="reg-email" name="email" placeholder=" " required>
+              <label for="reg-email" class="floating-label">College Email <span class="required">*</span></label>
+            </div>
+            <div class="form-group icon-group">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="reg-password" name="password" placeholder=" " required>
+              <label for="reg-password" class="floating-label">Create Password <span class="required">*</span></label>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span class="btn-text">Create Account</span>
+            </button>
+          </form>
+        </section>
 
-          <section id="panel-signin" class="tab-panel">
-            <form action="catalog.html" method="GET">
-              <div class="form-group">
-                <label for="roll-email">Student Roll Number / Email <span class="required">*</span></label>
-                <input type="text" id="roll-email" name="rollOrEmail" placeholder="e.g. 230766" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Password <span class="required">*</span></label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-              </div>
-              <div class="form-row">
-                <label class="checkbox-label">
-                  <input type="checkbox" id="remember" name="remember">
-                  Remember me
-                </label>
-                <a href="#" class="link-muted">Forgot Password?</a>
-              </div>
-              <button type="submit" class="btn-primary">Access Lab Portal</button>
-            </form>
-          </section>
+      </>
+    </div>
+  </section>
 
-          <section id="panel-register" class="tab-panel">
-            <form action="catalog.html" method="GET">
-              <div class="form-group">
-                <label for="full-name">Full Name <span class="required">*</span></label>
-                <input type="text" id="full-name" name="fullName" required>
-              </div>
-              <div class="form-group">
-                <label for="reg-roll">Student Roll Number <span class="required">*</span></label>
-                <input type="text" id="reg-roll" name="rollNumber" required>
-              </div>
-              <div class="form-group">
-                <label for="reg-email">College Email <span class="required">*</span></label>
-                <input type="email" id="reg-email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="reg-password">Create Password <span class="required">*</span></label>
-                <input type="password" id="reg-password" name="password" required>
-              </div>
-              <button type="submit" class="btn-primary">Create Account</button>
-            </form>
-          </section>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- RIGHT: Info Panel -->
-    <aside class="right-panel">
-      <img src="css/bml.png" alt="BML Munjal University campus" class="campus-img">
-      <div class="right-overlay">
-        <h2>Welcome to LabSpace</h2>
-        <p>Your one-stop portal to reserve lab equipment across SOET — oscilloscopes, 3D printers, Arduino kits, and more, without the paperwork.</p>
-        <ul class="feature-list">
-          <li>📅 Real-time slot booking</li>
-          <li>🔧 Live equipment status</li>
-          <li>🎓 Built for BMU students</li>
-        </ul>
-      </div>
-    </aside>
-
-  </main>
-
+</main>
 </body>
 </html>

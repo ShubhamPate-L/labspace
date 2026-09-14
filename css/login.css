@@ -1,26 +1,114 @@
-/* ---- Page centering ---- */
-/* .auth-page {
+/* ---- Page Layout ---- */
+.split-page {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
-  padding: 20px;
-} */
+  gap: 32px;
+  padding: 40px 20px;
+  overflow: hidden;
+}
 
-/* ---- Card ---- */
-.auth-card {
-  background: white;
+/* ---- Full-bleed background photo ---- */
+.page-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* ---- BMU-colored tint over the photo ---- */
+.page-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(245, 158, 11, 0.35),
+    rgba(220, 38, 38, 0.25),
+    rgba(22, 163, 74, 0.25),
+    rgba(2, 132, 199, 0.4));
+  z-index: 1;
+}
+
+/* ---- Panels sit above photo + tint ---- */
+.left-panel,
+.right-panel {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 400px;
+  max-width: 400px;
+  display: flex;
+}
+
+/* ---- Shared glass card look ---- */
+.auth-card,
+.info-card {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  margin: auto ;
+}
+/* Shared rule for auth card and info card dimensions */
+.auth-card,
+.info-card {
   width: 100%;
   max-width: 400px;
-  padding: 32px;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 90%;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card {
+  color: #0f172a;
+}
+
+.auth-card:hover,
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Info Card ---- */
+
+
+.info-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  color: #334155;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* ---- Branding ---- */
 .auth-brand {
   text-align: center;
   margin-bottom: 24px;
+}
+
+.brand-logo {
+  width: 48px;
+  margin-bottom: 8px;
 }
 
 .brand-title {
@@ -38,7 +126,7 @@
 /* ---- Tabs ---- */
 .tabs {
   display: flex;
-  background: var(--color-bg);
+  background: rgba(241, 245, 249, 0.6);
   border-radius: var(--radius);
   padding: 4px;
   margin-bottom: 24px;
@@ -53,9 +141,26 @@
   font-weight: 600;
   cursor: pointer;
   color: var(--color-muted);
+  text-align: center;
 }
 
-.tab-btn.active {
+.tab-radio {
+  display: none;
+  
+}
+
+.tab-panel {
+  display: none;
+  
+}
+
+#tab-signin:checked ~ #panel-signin,
+#tab-register:checked ~ #panel-register {
+  display: block;
+}
+
+#tab-signin:checked ~ .tabs label[for="tab-signin"],
+#tab-register:checked ~ .tabs label[for="tab-register"] {
   background: white;
   color: var(--color-text);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -83,6 +188,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .form-group input:focus {
@@ -115,113 +221,166 @@
   text-decoration: underline;
 }
 
-/* ---- Pure CSS Tab Switching ---- */
-.tab-radio {
-  display: none;
-}
-
-.tab-panel {
-  display: none;
-}
-
-#tab-signin:checked ~ #panel-signin,
-#tab-register:checked ~ #panel-register {
-  display: block;
-}
-
-#tab-signin:checked ~ .tabs label[for="tab-signin"],
-#tab-register:checked ~ .tabs label[for="tab-register"] {
-  background: white;
-  color: var(--color-text);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-/* ---- Split Page Layout ---- */
-.split-page {
-  min-height: 100vh;
-  display: flex;
-  background: linear-gradient(135deg, #fff9db, #ffe4e6, #dcfce7, #dbeafe);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.left-panel {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Card hover transition */
-.auth-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.auth-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.brand-logo {
-  width: 48px;
-  margin-bottom: 8px;
-}
-
-/* ---- Right Info Panel ---- */
-.right-panel {
-  flex: 1;
+/* ---- Icon + Floating Label Inputs ---- */
+.form-group.icon-group {
   position: relative;
-  display: none; /* hidden on small screens */
-  align-items: flex-end;
+  margin-bottom: 22px;
+}
+
+.form-group.icon-group input {
+  padding-left: 38px;
+  padding-top: 14px;
+  padding-bottom: 6px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.form-group.icon-group .floating-label {
+  position: absolute;
+  left: 38px;
+  top: 11px;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-group.icon-group input:focus + .floating-label,
+.form-group.icon-group input:not(:placeholder-shown) + .floating-label {
+  top: -9px;
+  left: 30px;
+  font-size: 0.7rem;
+  background: white;
+  padding: 0 4px;
+  color: var(--color-primary);
+}
+
+.form-group.icon-group input:not(:placeholder-shown):valid {
+  border-color: var(--color-success);
+}
+
+.form-group.icon-group input:not(:placeholder-shown):invalid {
+  border-color: var(--color-danger);
+}
+
+/* ---- Button ---- */
+.btn-primary {
+  position: relative;
   overflow: hidden;
 }
 
-.campus-img {
+.btn-primary:active::after {
+  content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: rgba(255, 255, 255, 0.25);
+  animation: pulse 0.4s ease-out;
 }
 
-.right-overlay {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 48px;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.1));
-  color: white;
+@keyframes pulse {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 
-.right-overlay h2 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-}
-
-.right-overlay p {
-  font-size: 0.95rem;
-  opacity: 0.9;
-  margin-bottom: 16px;
-  max-width: 380px;
-}
-
-.feature-list {
-  list-style: none;
+/* INFO CARD UPDATE */
+/* ---- Info Heading ---- */
+.info-heading {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-size: 0.9rem;
+  line-height: 1.1;
+  margin-bottom: 18px;
 }
 
-/* Show right panel only on wider screens */
-@media (min-width: 900px) {
-  .right-panel {
-    display: flex;
-  }
+.welcome-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #020c1b;
+}
+
+.brand-gradient-text {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #f59e0b, #dc2626, #16a34a, #0284c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Description ---- */
+.info-desc {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #010710;
+ 
+  margin-bottom: 22px;
+  
+}
+
+/* ---- Stats list ---- */
+.info-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* margin-bottom: 24px; */
+  padding-bottom: 24px;
+  /* border-bottom: 1px solid rgba(15, 23, 42, 0.1); */
+}
+
+.stat-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 10px 4px;
+}
+
+.stat-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  min-width: 55px;
+  flex-shrink:0;
+  text-align: center;
+}
+
+.stat-text {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* ---- Highlights ---- */
+.highlight-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #030c18;
+  margin-bottom: 10px;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #1e293b;
+  
 }
