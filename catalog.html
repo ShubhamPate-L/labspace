@@ -12,6 +12,7 @@
   <!-- Sticky Header -->
   <header class="site-header">
     <div class="header-left">
+      <img src="css/logo.png" alt="BMU logo" class="header-logo">
       <span class="header-brand">BML Munjal University™</span>
       <span class="header-app">LabSpace</span>
     </div>
@@ -76,19 +77,27 @@
     <div class="equipment-grid">
 
       <article class="equipment-card cat-soet">
-        <div class="card-top">
-          <h3>Digital Oscilloscope 50MHz</h3>
-          <span class="status-pill available">AVAILABLE</span>
-        </div>
-        <p class="card-location">📍 Lab 102 - SOET Wing &bull; ID: EQ-OSC-102</p>
-        <div class="slot-grid">
-          <span class="slot open">09:00 - 10:30</span>
-          <span class="slot open">10:30 - 12:00</span>
-          <span class="slot booked">13:00 - 14:30</span>
-          <span class="slot open">14:30 - 16:00</span>
-        </div>
-        <a href="booking.html" class="btn-book">Book Equipment</a>
-      </article>
+  <div class="card-top">
+    <h3>Digital Oscilloscope 50MHz</h3>
+    <span class="status-pill available">AVAILABLE</span>
+  </div>
+  <p class="card-location">📍 Lab 102 - SOET Wing &bull; ID: EQ-OSC-102</p>
+
+  <div class="slot-grid">
+    <input type="radio" name="equipment-slot" id="osc-1" class="slot-radio">
+    <label for="osc-1" class="slot open">09:00 - 10:30</label>
+
+    <input type="radio" name="equipment-slot" id="osc-2" class="slot-radio">
+    <label for="osc-2" class="slot open">10:30 - 12:00</label>
+
+    <span class="slot booked">13:00 - 14:30</span>
+
+    <input type="radio" name="equipment-slot" id="osc-3" class="slot-radio">
+    <label for="osc-3" class="slot open">14:30 - 16:00</label>
+  </div>
+
+  <a href="booking.html" class="btn-book">Book Equipment</a>
+</article>
 
       <article class="equipment-card cat-maker">
         <div class="card-top">
@@ -96,12 +105,19 @@
           <span class="status-pill available">AVAILABLE</span>
         </div>
         <p class="card-location">📍 Lab 204 - MakerSpace &bull; ID: EQ-3D-204</p>
-        <div class="slot-grid">
-          <span class="slot open">09:00 - 10:30</span>
-          <span class="slot open">10:30 - 12:00</span>
-          <span class="slot open">13:00 - 14:30</span>
-          <span class="slot open">14:30 - 16:00</span>
-        </div>
+<div class="slot-grid">
+  <input type="radio" name="equipment-slot" id="printer-1" class="slot-radio">
+  <label for="printer-1" class="slot open">09:00 - 10:30</label>
+
+  <input type="radio" name="equipment-slot" id="printer-2" class="slot-radio">
+  <label for="printer-2" class="slot open">10:30 - 12:00</label>
+
+  <input type="radio" name="equipment-slot" id="printer-3" class="slot-radio">
+  <label for="printer-3" class="slot open">13:00 - 14:30</label>
+
+  <input type="radio" name="equipment-slot" id="printer-4" class="slot-radio">
+  <label for="printer-4" class="slot open">14:30 - 16:00</label>
+</div>
         <a href="booking.html" class="btn-book">Book Equipment</a>
       </article>
 
@@ -127,11 +143,18 @@
         </div>
         <p class="card-location">📍 Lab 102 - SOET Wing &bull; ID: EQ-FGEN-102</p>
         <div class="slot-grid">
-          <span class="slot open">09:00 - 10:30</span>
-          <span class="slot open">10:30 - 12:00</span>
-          <span class="slot open">13:00 - 14:30</span>
-          <span class="slot open">14:30 - 16:00</span>
-        </div>
+  <input type="radio" name="equipment-slot" id="fgen-1" class="slot-radio">
+  <label for="fgen-1" class="slot open">09:00 - 10:30</label>
+
+  <input type="radio" name="equipment-slot" id="fgen-2" class="slot-radio">
+  <label for="fgen-2" class="slot open">10:30 - 12:00</label>
+
+  <input type="radio" name="equipment-slot" id="fgen-3" class="slot-radio">
+  <label for="fgen-3" class="slot open">13:00 - 14:30</label>
+
+  <input type="radio" name="equipment-slot" id="fgen-4" class="slot-radio">
+  <label for="fgen-4" class="slot open">14:30 - 16:00</label>
+</div>
         <a href="booking.html" class="btn-book">Book Equipment</a>
       </article>
 
@@ -141,12 +164,18 @@
           <span class="status-pill available">AVAILABLE</span>
         </div>
         <p class="card-location">📍 Lab 108 - IoT Lab &bull; ID: EQ-RPI-108</p>
-        <div class="slot-grid">
-          <span class="slot open">09:00 - 10:30</span>
-          <span class="slot open">10:30 - 12:00</span>
-          <span class="slot booked">13:00 - 14:30</span>
-          <span class="slot open">14:30 - 16:00</span>
-        </div>
+<div class="slot-grid">
+  <input type="radio" name="equipment-slot" id="rpi-1" class="slot-radio">
+  <label for="rpi-1" class="slot open">09:00 - 10:30</label>
+
+  <input type="radio" name="equipment-slot" id="rpi-2" class="slot-radio">
+  <label for="rpi-2" class="slot open">10:30 - 12:00</label>
+
+  <span class="slot booked">13:00 - 14:30</span>
+
+  <input type="radio" name="equipment-slot" id="rpi-3" class="slot-radio">
+  <label for="rpi-3" class="slot open">14:30 - 16:00</label>
+</div>
         <a href="booking.html" class="btn-book">Book Equipment</a>
       </article>
 
@@ -156,12 +185,19 @@
           <span class="status-pill available">AVAILABLE</span>
         </div>
         <p class="card-location">📍 Lab 201 - SOET Wing &bull; ID: EQ-SLD-201</p>
-        <div class="slot-grid">
-          <span class="slot open">09:00 - 10:30</span>
-          <span class="slot open">10:30 - 12:00</span>
-          <span class="slot open">13:00 - 14:30</span>
-          <span class="slot open">14:30 - 16:00</span>
-        </div>
+<div class="slot-grid">
+  <input type="radio" name="equipment-slot" id="sld-1" class="slot-radio">
+  <label for="sld-1" class="slot open">09:00 - 10:30</label>
+
+  <input type="radio" name="equipment-slot" id="sld-2" class="slot-radio">
+  <label for="sld-2" class="slot open">10:30 - 12:00</label>
+
+  <input type="radio" name="equipment-slot" id="sld-3" class="slot-radio">
+  <label for="sld-3" class="slot open">13:00 - 14:30</label>
+
+  <input type="radio" name="equipment-slot" id="sld-4" class="slot-radio">
+  <label for="sld-4" class="slot open">14:30 - 16:00</label>
+</div>
         <button class="btn-book">Book Equipment</button>
       </article>
 
