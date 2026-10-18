@@ -1,0 +1,4 @@
+# Project Updates
+
+[2026-10-18 14:46:14 UTC] Removed Quick Links, Resources, and Departments sections from index.html footer.
+[2026-10-18 14:46:14 UTC] Retained only Information (brand details) and Contact details in the footer.
