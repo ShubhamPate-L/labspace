@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script src="js/login.js" defer></script>
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
 
 <main class="split-page">
@@ -55,24 +60,25 @@
 
   <!-- RIGHT: Login Card -->
   <section class="right-panel">
-    <div class="auth-card">
+  <div class="auth-card">
 
-      <div class="auth-brand">
-        <img src="css/logo.png" alt="BMU logo" class="brand-logo">
-        <h1 class="brand-title">BML Munjal University™</h1>
-        <p class="brand-subtitle">Campus Lab Equipment Portal</p>
+    <div class="auth-brand">
+      <img src="css/logo.png" alt="BMU logo" class="brand-logo">
+      <h1 class="brand-title">BML Munjal University™</h1>
+      <p class="brand-subtitle">Campus Lab Equipment Portal</p>
+    </div>
+
+    <div class="tabs-wrapper">
+
+      <div class="tabs" role="tablist" aria-label="Authentication options">
+        <button type="button" class="tab-btn active" role="tab" id="tab-signin" aria-selected="true" aria-controls="panel-signin">Sign In</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-register" aria-selected="false" aria-controls="panel-register">New Registration</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-admin" aria-selected="false" aria-controls="panel-admin">Admin Login</button>
       </div>
 
-      <div class="tabs-wrapper">
-        <input type="radio" name="authTab" id="tab-signin" class="tab-radio" checked>
-        <input type="radio" name="authTab" id="tab-register" class="tab-radio">
+      <div class="tab-panels">
 
-        <div class="tabs" role="tablist" aria-label="Authentication options">
-          <label for="tab-signin" class="tab-btn">Sign In</label>
-          <label for="tab-register" class="tab-btn">New Registration</label>
-        </div>
-
-        <section id="panel-signin" class="tab-panel">
+        <section id="panel-signin" role="tabpanel" aria-labelledby="tab-signin" class="tab-panel active">
           <form action="catalog.html" method="GET">
             <div class="form-group icon-group">
               <span class="input-icon">👤</span>
@@ -97,7 +103,7 @@
           </form>
         </section>
 
-        <section id="panel-register" class="tab-panel">
+        <section id="panel-register" role="tabpanel" aria-labelledby="tab-register" class="tab-panel">
           <form action="catalog.html" method="GET">
             <div class="form-group icon-group">
               <span class="input-icon">🧑</span>
@@ -124,10 +130,31 @@
             </button>
           </form>
         </section>
+        <section id="panel-admin" role="tabpanel" aria-labelledby="tab-admin" class="tab-panel">
+  <form action="admin-dashboard.html" method="GET">
 
-      </>
+    <div class="form-group icon-group">
+      <span class="input-icon">🛡️</span>
+      <input type="text" id="admin-id" name="adminId" placeholder=" " required>
+      <label for="admin-id" class="floating-label">Admin / Staff ID <span class="required">*</span></label>
     </div>
-  </section>
+
+    <div class="form-group icon-group">
+      <span class="input-icon">🔒</span>
+      <input type="password" id="admin-password" name="password" placeholder=" " required>
+      <label for="admin-password" class="floating-label">Password <span class="required">*</span></label>
+    </div>
+
+    <button type="submit" class="btn-primary btn-admin">
+      <span class="btn-text">Access Admin Dashboard</span>
+    </button>
+  </form>
+</section>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 <footer class="site-footer">

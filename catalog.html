@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- <script src="js/catalog.js" defer></script> -->
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +24,7 @@
     <nav class="header-nav" aria-label="Main navigation">
       <a href="catalog.html" class="nav-link active">Equipment Grid</a>
       <a href="#" class="nav-link">My Bookings</a>
-      <a href="#" class="nav-link">Lab Schedule</a>
+      
     </nav>
 
     <div class="header-right">
@@ -40,14 +44,15 @@
     <span class="stat-number">5</span>
     <span class="stat-label">Available Now</span>
   </div>
+    <div class="stat-box stat-blue">
+    <span class="stat-number">0</span>
+    <span class="stat-label">Completely Booked</span>
+  </div>
   <div class="stat-box stat-red">
     <span class="stat-number">1</span>
     <span class="stat-label">Under Maintenance</span>
   </div>
-  <div class="stat-box stat-blue">
-    <span class="stat-number">4</span>
-    <span class="stat-label">Lab Locations</span>
-  </div>
+
 </div>
 
     <!-- Search + Filters -->
@@ -57,6 +62,12 @@
         class="search-input"
         placeholder="Search equipment by name or ID..."
         aria-label="Search equipment">
+
+          <input
+    type="date"
+    class="filter-select date-input"
+    aria-label="Select booking date"
+    value="2026-09-17">
 
       <select class="filter-select" aria-label="Filter by category">
         <option>All Categories</option>
@@ -267,5 +278,6 @@
     </div>
   </div>
 </footer>
+<script src="js/catalog.js" defer></script>
 </body>
 </html>

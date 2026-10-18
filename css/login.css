@@ -79,7 +79,6 @@
 
 /* ---- Info Card ---- */
 
-
 .info-card h2 {
   font-size: 1.6rem;
   margin-bottom: 12px;
@@ -144,26 +143,43 @@
   text-align: center;
 }
 
-.tab-radio {
-  display: none;
-  
+.tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-panels {
+  display: grid;
 }
 
 .tab-panel {
-  display: none;
-  
+  grid-column: 1;
+  grid-row: 1;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
-#tab-signin:checked ~ #panel-signin,
-#tab-register:checked ~ #panel-register {
-  display: block;
+.tab-panel.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-#tab-signin:checked ~ .tabs label[for="tab-signin"],
-#tab-register:checked ~ .tabs label[for="tab-register"] {
+.tab-btn.active {
   background: white;
   color: var(--color-text);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ADMIN Login Buttons */
+.btn-admin {
+  background: var(--color-text);
+}
+
+.btn-admin:hover {
+  background: #0f172a;
 }
 
 /* ---- Form ---- */

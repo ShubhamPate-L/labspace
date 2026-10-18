@@ -147,7 +147,7 @@
   margin-bottom: 14px;
 }
 
-/* ---- Status Pill ---- */
+/* ---- Status Pills(available/maintenance/booked---- */
 .status-pill {
   font-size: 0.7rem;
   font-weight: 700;
@@ -218,7 +218,7 @@
   color: var(--color-muted);
   cursor: not-allowed;
 }
-/* ---- Stats Banner ---- */
+/* ---- Stats Banner at Top ---- */
 .stats-banner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -306,4 +306,10 @@
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
   font-weight: 700;
+}
+/* DATE ADDED IN TOOLBAR */
+.date-input {
+  font-family: inherit;
+  color: var(--color-text);
+  min-width: 160px;
 }
