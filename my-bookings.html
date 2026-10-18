@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMU LabSpace | My Bookings</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/my-bookings.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <img src="css/logo.png" alt="BMU logo" class="header-logo">
+      <span class="header-brand">BML Munjal University™</span>
+      <span class="header-app">LabSpace</span>
+    </div>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="catalog.html" class="nav-link">Equipment Grid</a>
+      <a href="my-bookings.html" class="nav-link active">My Bookings</a>
+    </nav>
+
+    <div class="header-right">
+      <span class="roll-badge" id="header-roll-badge">Roll: Loading...</span>
+      <a href="index.html" class="btn-signout">Sign Out</a>
+    </div>
+  </header>
+
+  <main class="catalog-page my-bookings-page">
+    <div class="page-header">
+      <h1>My Bookings</h1>
+      <p>Manage your upcoming lab equipment reservations and view past bookings.</p>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tabs" role="tablist" aria-label="Bookings tabs">
+        <button type="button" class="tab-btn active" role="tab" id="tab-upcoming" aria-selected="true" aria-controls="panel-upcoming">
+          Upcoming (0)
+        </button>
+        <button type="button" class="tab-btn" role="tab" id="tab-past" aria-selected="false" aria-controls="panel-past">
+          Past (0)
+        </button>
+      </div>
+
+      <div class="message-container" id="message-container" aria-live="polite"></div>
+
+      <div class="tab-panels">
+        <section id="panel-upcoming" role="tabpanel" aria-labelledby="tab-upcoming" class="tab-panel active">
+          <div id="upcoming-state" class="state-container">Loading...</div>
+          <div class="equipment-grid" id="upcoming-grid" style="display: none;"></div>
+        </section>
+
+        <section id="panel-past" role="tabpanel" aria-labelledby="tab-past" class="tab-panel">
+          <div id="past-state" class="state-container">Loading...</div>
+          <div class="equipment-grid" id="past-grid" style="display: none;"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cancel Modal Overlay -->
+  <div class="modal-overlay hidden" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="cancel-modal-title">Cancel Reservation?</h2>
+        <button class="modal-close" aria-label="Close dialog" id="btn-close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to cancel your booking for <strong id="cancel-equipment-name"></strong> on <strong id="cancel-date-slot"></strong>?</p>
+        <p>This action cannot be undone and the slot will be made available to other students.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="btn-cancel-modal">Keep Booking</button>
+        <button class="btn-confirm" id="btn-confirm-cancel">Yes, Cancel</button>
+      </div>
+    </div>
+  </div>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-col footer-brand">
+      <h3>BMU LabSpace</h3>
+      <p>Centralized lab equipment reservation platform for the School of Engineering & Technology, BML Munjal University.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">x</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li>67th Km Stone, NH-8<br>Gurugram, Haryana 122413</li>
+        <li>labspace@bmu.edu.in</li>
+        <li>+91-124-495-0000</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 BML Munjal University. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/my-bookings.js" defer></script>
+</body>
+</html>

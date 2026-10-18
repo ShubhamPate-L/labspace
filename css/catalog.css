@@ -218,36 +218,6 @@
   color: var(--color-muted);
   cursor: not-allowed;
 }
-/* ---- Stats Banner at Top ---- */
-.stats-banner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.stat-box {
-  padding: 18px 20px;
-  border-radius: var(--radius);
-  color: white;
-}
-
-.stat-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-.stat-yellow { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
-.stat-green  { background: linear-gradient(135deg, #16a34a, #4ade80); }
-.stat-red    { background: linear-gradient(135deg, #dc2626, #f87171); }
-.stat-blue   { background: linear-gradient(135deg, #0284c7, #38bdf8); }
-
 /* ---- Category color-coded left border ---- */
 .equipment-card {
   border-left: 4px solid transparent;

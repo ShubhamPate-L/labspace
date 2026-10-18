@@ -1,4 +1,5 @@
 # Project Updates
 
 [2026-10-18 14:46:14 UTC] Removed Quick Links, Resources, and Departments sections from index.html footer.
-[2026-10-18 14:46:14 UTC] Retained only Information (brand details) and Contact details in the footer.
+
+[2026-10-19 12:00:00 UTC] Completed feature/my-bookings: Removed stat cards from student pages, built backend models/seed data for labs and equipment, built Student bookings API with get/cancel logic, and added the 'My Bookings' frontend tabbed page.
